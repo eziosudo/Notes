@@ -21,6 +21,18 @@ long(Long) 8字节
 4. 对象应该是final的，以此来限制子类继承父类，以避免子类改变了父类的immutable特性。
 5. 如果类中包含mutable类对象，那么返回给客户端的时候，返回该对象的一个拷贝，而不是该对象本身（该条可以归为第一条中的一个特例）。
 
+## String，StringBuilder和StringBuffer的区别？
+1. String类是不可变的，每次改变对象都会在堆中开辟新的内存存放新对象；
+2. StringBuilder和StringBuffer是可变的，能够被直接修改。
+3. StringBuilder是非线程安全的，StringBuffer是线程安全的。
+4. StringBuilder比StringBuffer速度快，一般建议用StringBuilder，如果程序中要求线程安全，就必须使用StringBuffer。
+
+## StringBuffer是如何保证线程安全的？
+- 用synchronized关键字修饰了所有方法保证线程安全。
+
+## synchronized是乐观锁还是悲观锁？
+
+## 字符串拼接方法？
 
 # Java集合
 ## 集合的继承关系
@@ -78,5 +90,20 @@ ThreadLocal的Entry继承自WeakReference，意味着ThreadLocal在没有外部�
 > 解决：显示设置Entry的key为null，这样Entry对应的value就没有GC Roots可达，发生GC时就会被回收。
 > 可达性分析中的GC Roots: 虚拟机栈（栈帧中的本地变量表）中引用的对象；方法区中类静态属性引用的对象；方法区中常量引用的对象；本地方法栈中JNI（即一般说的Native方法）引用的对象。
 
+> Netty的fastThreadLocal?
+
 # Java NIO的原理？selector是一个什么角色？buffer中的读写是怎么样的？
+
+
+# Java线程的五种状态？
+
+
+# 线程池的实现原理是什么？
+
+
+# Java线程池的创建
+## newFixedThreadPool(10)中的参数代表什么？
+
+
+# synchronized是乐观锁还是悲观锁？
 
