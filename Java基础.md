@@ -1,13 +1,17 @@
 # Java基础知识和语法
 ## Java有哪几种基本类型以(对应的包装类型)，分别占用字节是多少？
-byte(Byte) 1字节
-boolean(Boolean) 1字节
-char(Character) 2字节
-short(Short) 2字节
-int (Integer) 4字节
-float(Float) 4字节
-double(Double) 8字节
-long(Long) 8字节
+|基本类型| 大小（byte) |包装器类型|
+|--|--|--|
+|boolean| 没有明确指定，仅定义为能取字面值true或false | Boolean|
+|byte | 1 | Byte|
+|short | 2 | Short|
+|char | 2 | Character|
+|int |4 | Integer|
+|float | 4 | Float|
+|double| 8 | Double |
+|long | 8 | Long|
+
+-- 摘自《Java编程思想》
 
 ## 关于String类
 
@@ -31,8 +35,13 @@ long(Long) 8字节
 - 用synchronized关键字修饰了所有方法保证线程安全。
 
 ## synchronized是乐观锁还是悲观锁？
+- 是悲观锁（即每次获取数据的时候都会对数据进行加锁，确保在自己使用过程中数据不会被别人修改）。
 
 ## 字符串拼接方法？
+1. String使用“+”。（"+"可以接任何类型）
+2. String方法使用concat。（concat只能接字符串）
+3. StringBuilder方法使用append()。
+4. StringBuffer方法使用append()。
 
 # Java集合
 ## 集合的继承关系
